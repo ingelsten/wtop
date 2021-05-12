@@ -44,7 +44,7 @@ public class StationCtrl extends Controller
 
 
 
-        Logger.info("Latest read in Celcius= " + latestRead.temperature + "Latest pressure= " + latestRead.pressure);
+  //      Logger.info("Latest read in Celcius= " + latestRead.temperature + "Latest pressure= " + latestRead.pressure);
         render("station.html", station, latestRead, weatherCode, beauCode, compassDirection, windChillTemp);
     }
 
