@@ -42,11 +42,12 @@ Station(s2):
     - r3
     - r4
 
+
 Member(m1):
-email: homer@simpson.com
-password: secret
-firstname: Homer
-lastname : Simpson
-stations :
-  - s1
-  - s2
+  email: homer@simpson.com
+  password: secret
+  firstname: Homer
+  lastname : Simpson
+  stations :
+    - s1
+    - s2
