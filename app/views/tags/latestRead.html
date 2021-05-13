@@ -3,26 +3,27 @@
     <div class="stretched row">
         <div class="column">
             <div class="ui inverted segment">
-                <h3>Station:</h3>
+                <h3>Station: &ensp; <i class="white map marker alternate low icon"></i></h3></h3>
                 <h2> ${_station.name}</h2>
             </div>
         </div>
         <div class="column">
             <div class="ui inverted red segment">
-                <h3>Weather:</h3>
+                <h3>Weather:&ensp;</h3>
                 <h4>${_weatherCode}</h4>
+                <i class="white cloud sun icon"></i>
             </div>
         </div>
         <div class="column">
             <div class="ui inverted blue segment">
-                <h3>Temperature:</h3>
+                <h3>Temperature: &ensp; <i class="white temperature low icon"></i></h3></h3>
                 <h4> ${_station.readings.temperature.last()} Celsius</h4>
                 <h4> ${_station.readings.temperature.last()*9/5+32} Fahrenheit</h4>
             </div>
         </div>
         <div class="column">
             <div class="ui inverted green segment">
-                <h3>Wind:</h3>
+                <h3>Wind:&ensp; <i class="white wind icon"></i></h3>
                 <h4>Strength: ${_beauCode} bft</h4>
                 <h4>Direction: ${_compassDirection}</h4>
                 <h4>Feels like: ${_windChillTemp}</h4>
@@ -30,7 +31,7 @@
         </div>
         <div class="column">
             <div class="ui inverted purple segment">
-                <h3>Pressure:</h3>
+                <h3>Pressure: &ensp; <i class="white chart bar icon"></i></h3>
                 <h4>${_station.readings.pressure.last()} hPa </h4>
             </div>
         </div>
