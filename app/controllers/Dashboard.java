@@ -16,7 +16,7 @@ public class Dashboard extends Controller
   {
     Logger.info("Rendering Admin");
     Member member = Accounts.getLoggedInMember();
-    List<Station> stations = Station.findAll();
+    List<Station> stations = member.stations;
     render ("dashboard.html", stations);
   }
   public static void deleteStation (Long id)

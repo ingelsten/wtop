@@ -9,8 +9,35 @@
         </div>
         <div class="column">
             <div class="ui inverted red segment">
-                <h3>Weather: &ensp; <i class="white cloud sun rain icon"></i></h3>
+                <h3>Weather: </h3>
                 <h4>${_weatherCode}</h4>
+                #{if _weatherCode =="Clear"}
+                <i class="white huge sun outline icon"></i>
+                #{/if}
+                #{if _weatherCode =="Partial Clouds"}
+                <i class="white huge cloud sun icon"></i>
+                #{/if}
+                #{if _weatherCode == "Cloudy"}
+                <i class="white huge cloud icon"></i>
+                #{/if}
+                #{if _weatherCode == "Light Showers"}
+                <i class="white huge cloud rain icon"></i>
+                #{/if}
+                #{if _weatherCode == "Heavy Showers"}
+                <i class="white huge cloud showers heavy icon"></i>
+                #{/if}
+                #{if _weatherCode == "Rain"}
+                <i class="white huge umbrella icon"></i>
+                #{/if}
+                #{if _weatherCode == "Snow"}
+                <i class="white huge snowflake icon"></i>
+                #{/if}
+                #{if _weatherCode == "Thunder"}
+                <i class="white huge bolt icon"></i>
+                #{/if}
+                #{if _weatherCode == "Crap Data"}
+                <i class="white huge skull crossbones icon"></i>
+                #{/if}
             </div>
         </div>
         <div class="column">
