@@ -29,9 +29,9 @@ public class Dashboard extends Controller
     station.delete();
     redirect ("/dashboard");
   }
-  public static void addStation (String name)
+  public static void addStation (String name, float latitude, float longitude )
   {
-    Station station = new Station (name);
+    Station station = new Station (name,latitude, longitude);
     Logger.info ("Adding a new station called " + name);
     Member member = Accounts.getLoggedInMember();
     member.stations.add(station);
