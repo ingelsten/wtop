@@ -9,10 +9,11 @@
     </h2>
 
     #{if latestRead != null }
-    #{latestRead station:station, weatherCode:weatherCode, beauCode:beauCode, compassDirection:compassDirection, windChillTemp:windChillTemp /}
+    #{latestRead station:station, weatherCode:weatherCode, beauCode:beauCode, compassDirection:compassDirection,
+    windChillTemp:windChillTemp /}
     #{/if}
 
-     #{listReadings station:station /}
+    #{listReadings station:station /}
     #{addReading station:station /}
 
 </section>
