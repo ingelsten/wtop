@@ -15,17 +15,18 @@ public class StationCtrl extends Controller {
     public static void index(Long id) {
         Station station = Station.findById(id);
         Logger.info("Station id = " + id);
-        String weatherCode = "100";
-        int beauCode = 0;
+        String weatherCode;
+        int beauCode;
         String compassDirection;
         String windChillTemp;
-        double minTemperature = 0;
-        double maxTemperature = 0;
-        double minWindSpeed = 0;
-        double maxWindSpeed = 0;
-        double minPressure = 0;
-        double maxPressure = 0;
+        double minTemperature;
+        double maxTemperature;
+        double minWindSpeed;
+        double maxWindSpeed;
+        double minPressure;
+        double maxPressure;
         Reading latestRead = StationAnalytics.getLatestReading(station.readings);
+
         try {
             weatherCode = StationAnalytics.codeToText(latestRead.code);
 
@@ -84,7 +85,7 @@ public class StationCtrl extends Controller {
             maxPressure = 0;
         }
 
-        Logger.info("Test " + minTemperature);
+      //  Logger.info("Test " + minTemperature);
         //      Logger.info("Latest read in Celcius= " + latestRead.temperature + "Latest pressure= " + latestRead.pressure);
         render("station.html", station, latestRead, weatherCode, beauCode, compassDirection, windChillTemp, minTemperature,
                 maxTemperature, minWindSpeed, maxWindSpeed, minPressure, maxPressure);

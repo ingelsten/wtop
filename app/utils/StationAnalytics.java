@@ -145,8 +145,7 @@ public class StationAnalytics {
             for (Reading reading : readings) {
                 if (reading.temperature < minTempReading.temperature) {
                     minTempReading = reading;
-                    System.out.println(minTempReading.temperature);
-                }
+                     }
             }
         }
         return minTempReading.temperature;
@@ -161,7 +160,7 @@ public class StationAnalytics {
             for (Reading reading : readings) {
                 if (reading.temperature > maxTempReading.temperature) {
                     maxTempReading = reading;
-                    System.out.println(maxTempReading.temperature);
+
                 }
             }
         }
@@ -177,8 +176,7 @@ public class StationAnalytics {
             for (Reading reading : readings) {
                 if (reading.windSpeed < minWindReading.windSpeed) {
                     minWindReading = reading;
-                    System.out.println(minWindReading.windSpeed);
-                }
+                                    }
             }
         }
         return minWindReading.windSpeed;
@@ -193,8 +191,7 @@ public class StationAnalytics {
             for (Reading reading : readings) {
                 if (reading.windSpeed > maxWindReading.windSpeed) {
                     maxWindReading = reading;
-                    System.out.println(maxWindReading.windSpeed);
-                }
+                                    }
             }
         }
         return maxWindReading.windSpeed;
@@ -209,8 +206,7 @@ public class StationAnalytics {
             for (Reading reading : readings) {
                 if (reading.pressure < minPressure.pressure) {
                     minPressure = reading;
-                    System.out.println(minPressure.pressure);
-                }
+                                    }
             }
         }
         return minPressure.pressure;
@@ -225,8 +221,7 @@ public class StationAnalytics {
             for (Reading reading : readings) {
                 if (reading.pressure > maxPressure.pressure) {
                     maxPressure = reading;
-                    System.out.println(maxPressure.pressure);
-                }
+                               }
             }
         }
         return maxPressure.pressure;

@@ -2,16 +2,16 @@
     <div class="stretched row">
         <div class="column">
             <div class="ui inverted segment">
-                <h3>Station: &ensp; <i class="white map marker alternate low icon"></i></h3></h3>
+                <h3>Station: &ensp; <i class="white map marker alternate low icon"></i></h3>
                 <h2> ${_station.name}</h2>
-                <h5>Lat: ${_station.latitude}</h5>
-                <h5>Long: ${_station.longitude}</h5>
+                <p>Lat: ${_station.latitude}</p>
+                <p>Long: ${_station.longitude}</p>
             </div>
         </div>
         <div class="column">
             <div class="ui inverted red segment">
                 <h3>Weather: </h3>
-                <h5>${_weatherCode}</h5>
+                <p>${_weatherCode}</p>
                 #{if _weatherCode =="Clear"}
                 &ensp;<i class="white huge sun outline icon"></i>
                 #{/if}
@@ -43,29 +43,29 @@
         </div>
         <div class="column">
             <div class="ui inverted blue segment">
-                <h3>Temperature: &ensp; <i class="white temperature low icon"></i></h3></h3>
-                <h5> ${_station.readings.temperature.last()} Celsius</h5>
-                <h5>${_station.readings.temperature.last()*9/5+32} Fahrenheit</h5>
-                <h5>Min: ${_minTemperature} C</h5>
-                <h5>Max: ${_maxTemperature} C</h5>
+                <h3>Temperature: &ensp; <i class="white temperature low icon"></i></h3>
+                <p> ${_station.readings.temperature.last()} Celsius</p>
+                <p>${_station.readings.temperature.last()*9/5+32} Fahrenheit</p>
+                <p>Min: ${_minTemperature} C</p>
+                <p>Max: ${_maxTemperature} C</p>
             </div>
         </div>
         <div class="column">
             <div class="ui inverted green segment">
                 <h3>Wind:&ensp; <i class="white wind icon"></i></h3>
-                <h5>Strength: ${_beauCode} bft</h5>
-                <h5>Direction: ${_compassDirection}</h5>
-                <h5>Feels like: ${_windChillTemp}</h5>
-                <h5>Min: ${_minWindSpeed}</h5>
-                <h5>Max: ${_maxWindSpeed}</h5>
+                <p>Strength: ${_beauCode} bft</p>
+                <p>Direction: ${_compassDirection}</p>
+                <p>Feels like: ${_windChillTemp}</p>
+                <p>Min: ${_minWindSpeed}</p>
+                <p>Max: ${_maxWindSpeed}</p>
             </div>
         </div>
         <div class="column">
             <div class="ui inverted purple segment">
                 <h3>Pressure: &ensp; <i class="white chart bar icon"></i></h3>
-                <h5>${_station.readings.pressure.last()} hPa </h5>
-                <h5>Min: ${_minPressure}</h5>
-                <h5>Max: ${_maxPressure}</h5>
+                <p>${_station.readings.pressure.last()} hPa </p>
+                <p>Min: ${_minPressure}</p>
+                <p>Max: ${_maxPressure}</p>
             </div>
         </div>
     </div>
