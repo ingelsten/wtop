@@ -19,6 +19,12 @@ public class StationCtrl extends Controller {
         int beauCode = 0;
         String compassDirection;
         String windChillTemp;
+        double minTemperature = 0;
+        double maxTemperature = 0;
+        double minWindSpeed = 0;
+        double maxWindSpeed = 0;
+        double minPressure = 0;
+        double maxPressure = 0;
         Reading latestRead = StationAnalytics.getLatestReading(station.readings);
         try {
             weatherCode = StationAnalytics.codeToText(latestRead.code);
@@ -47,10 +53,41 @@ public class StationCtrl extends Controller {
         } catch (NullPointerException e) {
             windChillTemp = "0";
         }
+        try {
+            minTemperature = StationAnalytics.MinTemp(station.readings);
+        } catch (NullPointerException e) {
+            minTemperature = 0;
+        }
+        try {
+            maxTemperature = StationAnalytics.maxTemp(station.readings);
+        } catch (NullPointerException e) {
+            maxTemperature = 0;
+        }
+        try {
+            minWindSpeed = StationAnalytics.MinWind(station.readings);
+        } catch (NullPointerException e) {
+            minWindSpeed = 0;
+        }
+        try {
+            maxWindSpeed = StationAnalytics.maxWind(station.readings);
+        } catch (NullPointerException e) {
+            maxWindSpeed = 0;
+        }
+        try {
+            minPressure = StationAnalytics.minPressure(station.readings);
+        } catch (NullPointerException e) {
+            minPressure = 0;
+        }
+        try {
+            maxPressure = StationAnalytics.maxPressure(station.readings);
+        } catch (NullPointerException e) {
+            maxPressure = 0;
+        }
 
-
+        Logger.info("Test " + minTemperature);
         //      Logger.info("Latest read in Celcius= " + latestRead.temperature + "Latest pressure= " + latestRead.pressure);
-        render("station.html", station, latestRead, weatherCode, beauCode, compassDirection, windChillTemp);
+        render("station.html", station, latestRead, weatherCode, beauCode, compassDirection, windChillTemp, minTemperature,
+                maxTemperature, minWindSpeed, maxWindSpeed, minPressure, maxPressure);
     }
 
 

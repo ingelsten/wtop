@@ -85,37 +85,37 @@ public class StationAnalytics {
 
         if ((windDirection >= 348.75) && (windDirection <= 360) ||
                 (windDirection >= 0) && (windDirection <= 11.25)) {
-            return "N";
+            return "North";
         } else if ((windDirection >= 11.25) && (windDirection <= 33.75)) {
-            return "NNE";
+            return "North North East";
         } else if ((windDirection >= 33.75) && (windDirection <= 56.25)) {
-            return "NE";
+            return "North East";
         } else if ((windDirection >= 56.25) && (windDirection <= 78.75)) {
-            return "ENE";
+            return "East North East";
         } else if ((windDirection >= 78.75) && (windDirection <= 101.25)) {
-            return "E";
+            return "East";
         } else if ((windDirection >= 101.25) && (windDirection <= 123.75)) {
-            return "ESE";
+            return "East South East";
         } else if ((windDirection >= 123.75) && (windDirection <= 146.25)) {
-            return "SE";
+            return "South East";
         } else if ((windDirection >= 146.25) && (windDirection <= 168.75)) {
-            return "SSE";
+            return "South South East";
         } else if ((windDirection >= 168.75) && (windDirection <= 191.25)) {
-            return "S";
+            return "South";
         } else if ((windDirection >= 191.25) && (windDirection <= 213.75)) {
-            return "SSW";
+            return "South South West";
         } else if ((windDirection >= 213.75) && (windDirection <= 236.25)) {
-            return "SW";
+            return "South W";
         } else if ((windDirection >= 236.25) && (windDirection <= 258.75)) {
-            return "WSW";
+            return "West South West";
         } else if ((windDirection >= 258.75) && (windDirection <= 281.25)) {
-            return "W";
+            return "West";
         } else if ((windDirection >= 281.25) && (windDirection <= 303.75)) {
-            return "WNW";
+            return "West North West";
         } else if ((windDirection >= 303.75) && (windDirection <= 326.25)) {
-            return "NW";
+            return "North West";
         } else if ((windDirection >= 326.25) && (windDirection <= 348.75)) {
-            return "NNW";
+            return "North North West";
         } else if (windDirection > 360) {
             return "CRAP DATA";
         }
@@ -134,7 +134,103 @@ public class StationAnalytics {
 
         return (df2.format(windChillTemp));
     }
-}
 
+
+    public static double MinTemp(List<Reading> readings) {
+
+        Reading minTempReading = null;
+
+        if (readings.size() > 0) {
+            minTempReading = readings.get(0);
+            for (Reading reading : readings) {
+                if (reading.temperature < minTempReading.temperature) {
+                    minTempReading = reading;
+                    System.out.println(minTempReading.temperature);
+                }
+            }
+        }
+        return minTempReading.temperature;
+    }
+
+    public static double maxTemp(List<Reading> readings) {
+
+        Reading maxTempReading = null;
+
+        if (readings.size() > 0) {
+            maxTempReading = readings.get(0);
+            for (Reading reading : readings) {
+                if (reading.temperature > maxTempReading.temperature) {
+                    maxTempReading = reading;
+                    System.out.println(maxTempReading.temperature);
+                }
+            }
+        }
+        return maxTempReading.temperature;
+    }
+
+    public static double MinWind(List<Reading> readings) {
+
+        Reading minWindReading = null;
+
+        if (readings.size() > 0) {
+            minWindReading = readings.get(0);
+            for (Reading reading : readings) {
+                if (reading.windSpeed < minWindReading.windSpeed) {
+                    minWindReading = reading;
+                    System.out.println(minWindReading.windSpeed);
+                }
+            }
+        }
+        return minWindReading.windSpeed;
+    }
+
+    public static double maxWind(List<Reading> readings) {
+
+        Reading maxWindReading = null;
+
+        if (readings.size() > 0) {
+            maxWindReading = readings.get(0);
+            for (Reading reading : readings) {
+                if (reading.windSpeed > maxWindReading.windSpeed) {
+                    maxWindReading = reading;
+                    System.out.println(maxWindReading.windSpeed);
+                }
+            }
+        }
+        return maxWindReading.windSpeed;
+    }
+
+    public static double minPressure(List<Reading> readings) {
+
+        Reading minPressure = null;
+
+        if (readings.size() > 0) {
+            minPressure = readings.get(0);
+            for (Reading reading : readings) {
+                if (reading.pressure < minPressure.pressure) {
+                    minPressure = reading;
+                    System.out.println(minPressure.pressure);
+                }
+            }
+        }
+        return minPressure.pressure;
+    }
+
+    public static double maxPressure(List<Reading> readings) {
+
+        Reading maxPressure = null;
+
+        if (readings.size() > 0) {
+            maxPressure = readings.get(0);
+            for (Reading reading : readings) {
+                if (reading.pressure > maxPressure.pressure) {
+                    maxPressure = reading;
+                    System.out.println(maxPressure.pressure);
+                }
+            }
+        }
+        return maxPressure.pressure;
+    }
+}
 
 

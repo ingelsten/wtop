@@ -10,7 +10,9 @@
 
     #{if latestRead != null }
     #{latestRead station:station, weatherCode:weatherCode, beauCode:beauCode, compassDirection:compassDirection,
-    windChillTemp:windChillTemp /}
+    windChillTemp:windChillTemp, minTemperature:minTemperature, maxTemperature:maxTemperature,
+    minWindSpeed:minWindSpeed,
+    maxWindSpeed:maxWindSpeed, minPressure:minPressure, maxPressure:maxPressure/}
     #{/if}
 
     #{listReadings station:station /}
