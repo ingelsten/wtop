@@ -1,7 +1,14 @@
 #{extends 'main.html' /}
 #{set title:'login' /}
 #{welcomemenu id:"login"/}
-
+<section class="ui center aligned middle aligned segment">
+    <h1 class="ui header">
+        Welcome to Weather Top - Version 4: Release 2
+    </h1>
+    <p>
+        This is a small weather APP by WeatherTop.
+    </p>
+</section>
 <div class="ui two column middle aligned grid basic segment">
     <div class="column">
         <form class="ui stacked segment form" action="/authenticate" method="POST">
@@ -16,7 +23,7 @@
         </form>
     </div>
     <div class="column">
-        <img class="ui image" src="/public/images/weather-icon.png">
+        <img class="ui image" src="/public/images/weather_front.jpg">
     </div>
 </div>
 

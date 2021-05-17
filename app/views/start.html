@@ -5,26 +5,35 @@
 
 <section class="ui center aligned middle aligned segment">
     <h1 class="ui header">
-        Welcome to Weather Top - Release 1.0
+        Welcome to Weather Top - Version 4: Release 2
     </h1>
     <p>
-        This is a small weather APP
+        This is a small weather APP by WeatherTop.
     </p>
 </section>
 <div class="ui two column middle aligned grid basic segment">
     <div class="column">
-        <form class="ui stacked segment form" action="/authenticate" method="POST">
-            <h3 class="ui header">Log-in</h3>
-            <div class="field">
-                <label>Email</label> <input placeholder="Email" name="email">
-            </div>
-            <div class="field">
-                <label>Password</label> <input type="password" name="password">
-            </div>
-            <button class="ui blue submit button">Login</button>
-        </form>
+        <div class="ui secondary inverted blue segment">
+          <h2>Login to your account:</h2>
+        </div>
+               <form class="ui stacked segment form" action="/authenticate" method="POST">
+                    <h3 class="ui header">Log-in</h3>
+                    <div class="field">
+                        <label>Email</label> <input placeholder="Email" name="email">
+                    </div>
+                    <div class="field">
+                        <label>Password</label> <input type="password" name="password">
+                    </div>
+                    <button class="ui red submit button">Login</button>
+                </form>
+        <div class="ui tertiary inverted blue segment">
+            <h3>Press Sign up to register a new account</h3>
+        </div>
     </div>
+
     <div class="column">
         <img class="ui image" src="/public/images/weather_front.jpg">
     </div>
 </div>
+
+
