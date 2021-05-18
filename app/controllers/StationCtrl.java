@@ -8,7 +8,6 @@ import play.Logger;
 import play.mvc.Controller;
 import utils.StationAnalytics;
 
-import static utils.StationAnalytics.codeToText;
 
 public class StationCtrl extends Controller {
 
@@ -85,7 +84,7 @@ public class StationCtrl extends Controller {
             maxPressure = 0;
         }
 
-      //  Logger.info("Test " + minTemperature);
+        //  Logger.info("Test " + minTemperature);
         //      Logger.info("Latest read in Celcius= " + latestRead.temperature + "Latest pressure= " + latestRead.pressure);
         render("station.html", station, latestRead, weatherCode, beauCode, compassDirection, windChillTemp, minTemperature,
                 maxTemperature, minWindSpeed, maxWindSpeed, minPressure, maxPressure);
