@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Weather-Top' /}
+
+#{menu id:"dashboard"/}
+
+<section class="ui segment">
+    <h2 class="ui header">
+        ${station.name}
+    </h2>
+
+    #{if latestRead != null }
+    #{latestRead station:station, weatherCode:weatherCode,
+    beauCode:beauCode, compassDirection:compassDirection,
+    windChillTemp:windChillTemp,
+    minTemperature:minTemperature, maxTemperature:maxTemperature,minWindSpeed:minWindSpeed,
+    maxWindSpeed:maxWindSpeed, minPressure:minPressure, maxPressure:maxPressure/}
+    #{/if}
+
+    #{listReadings station:station /}
+    #{addReading station:station /}
+
+</section>
+
