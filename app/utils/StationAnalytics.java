@@ -6,16 +6,13 @@ import java.util.List;
 
 import java.text.DecimalFormat;
 
-/**
- * This class does all the analytics
- */
+// Below class does all the analytics for the reading data.
+
 public class StationAnalytics {
 
-
-  private static int windDirection;
-
+  //latest reading of list of readings
   public static Reading getLatestReading(List<Reading> readings) {
-    //gets the latest reading
+
     Reading latestRead = null;
 
     if (readings.size() > 0) {
@@ -29,6 +26,7 @@ public class StationAnalytics {
     return latestRead;
   }
 
+  //switch statement converts code to text of the latest read
   public static String codeToText(int code) {
     switch (code) {
 
@@ -53,6 +51,7 @@ public class StationAnalytics {
     }
   }
 
+  //if statement to get the correct beaufort of the latest read
   public static int windCode(double windSpeed) {
     if (windSpeed <= 1) {
       return 0;
@@ -82,9 +81,8 @@ public class StationAnalytics {
     return 0;
   }
 
-
+  //if statement to get the compass direction of the latest read
   public static String compassDirection(int windDirection) {
-
 
     if ((windDirection >= 348.75) && (windDirection <= 360) ||
         (windDirection >= 0) && (windDirection <= 11.25)) {
@@ -126,7 +124,7 @@ public class StationAnalytics {
     return null;
   }
 
-  //https://mkyong.com/java/java-display-double-in-2-decimal-points
+  //Windchill calculation of the latest read
   public static String windChill(double temperature, double windSpeed) {
 
     DecimalFormat df2 = new DecimalFormat("#.##");
@@ -138,7 +136,7 @@ public class StationAnalytics {
     return (df2.format(windChillTemp));
   }
 
-
+  //Min temperature value of all readings for a station
   public static double MinTemp(List<Reading> readings) {
 
     Reading minTempReading = null;
@@ -154,6 +152,7 @@ public class StationAnalytics {
     return minTempReading.temperature;
   }
 
+  //Max temperature value of all readings for a station
   public static double maxTemp(List<Reading> readings) {
 
     Reading maxTempReading = null;
@@ -170,6 +169,7 @@ public class StationAnalytics {
     return maxTempReading.temperature;
   }
 
+  //Min wind value of all readings for a station
   public static double MinWind(List<Reading> readings) {
 
     Reading minWindReading = null;
@@ -185,6 +185,7 @@ public class StationAnalytics {
     return minWindReading.windSpeed;
   }
 
+  //Max wind value of all readings for a station
   public static double maxWind(List<Reading> readings) {
 
     Reading maxWindReading = null;
@@ -200,6 +201,7 @@ public class StationAnalytics {
     return maxWindReading.windSpeed;
   }
 
+  //Min pressure value of all readings for a station
   public static double minPressure(List<Reading> readings) {
 
     Reading minPressure = null;
@@ -215,6 +217,7 @@ public class StationAnalytics {
     return minPressure.pressure;
   }
 
+  //Max pressure value of all readings for a station
   public static double maxPressure(List<Reading> readings) {
 
     Reading maxPressure = null;
