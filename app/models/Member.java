@@ -8,6 +8,7 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+// Data held for members and passed to SQL db.
 @Entity
 public class Member extends Model {
   public String firstname;

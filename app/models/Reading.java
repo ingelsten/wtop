@@ -4,6 +4,7 @@ import play.db.jpa.Model;
 
 import javax.persistence.Entity;
 
+// Data held for readings and passed to SQL db.
 @Entity
 public class Reading extends Model {
   public int code;

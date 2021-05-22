@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+// Data held for Stations and passed to SQL db.
 @Entity
 public class Station extends Model {
   public String name;
