@@ -5,14 +5,16 @@ import models.Reading;
 import java.util.List;
 
 import java.text.DecimalFormat;
-
+/**
+ * This class does all the analytics
+ */
 public class StationAnalytics {
 
 
     private static int windDirection;
 
     public static Reading getLatestReading(List<Reading> readings) {
-
+    //gets the latest reading
         Reading latestRead = null;
 
         if (readings.size() > 0) {

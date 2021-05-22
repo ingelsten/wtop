@@ -50,11 +50,5 @@ Member(m1):
   lastname: Simpson
   stations:
     - s1
-
-Member(m2):
-  email: marge@simpson.com
-  password: secret
-  firstname: Homer
-  lastname: Simpson
-  stations:
     - s2
+
