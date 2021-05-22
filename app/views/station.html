@@ -7,7 +7,7 @@
     <h2 class="ui header">
         ${station.name}
     </h2>
-
+    <!--  This section passes thru parameters to the latest weather data, if statement to ensure no error when no read.-->
     #{if latestRead != null }
     #{latestRead station:station, weatherCode:weatherCode,
     beauCode:beauCode, compassDirection:compassDirection,
@@ -15,7 +15,7 @@
     minTemperature:minTemperature, maxTemperature:maxTemperature,minWindSpeed:minWindSpeed,
     maxWindSpeed:maxWindSpeed, minPressure:minPressure, maxPressure:maxPressure/}
     #{/if}
-
+    <!--  Allows for adding readings for a station with no data-->
     #{listReadings station:station /}
     #{addReading station:station /}
 
