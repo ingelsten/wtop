@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Sign up' /}
 #{welcomemenu id:"signup"/}
-
+<!--  This is the signup page.-->
 <section class="ui center aligned middle aligned inverted blue segment">
     <h1 class="ui header">
         Welcome to WeatherTop 1000 - Version 4: Release 2
@@ -11,7 +11,6 @@
         as a new user.
     </p>
 </section>
-
 <div class="ui two column grid basic middle aligned segment">
     <div class="column">
         <form class="ui stacked segment form" action="/register" method="POST">
@@ -32,10 +31,11 @@
             </div>
             <div class="field">
                 <label>Password</label>
+                <!--Validation of input-->
                 <input type="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                        title="Please try again  - password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                        required>
-                <p>Please note password must contain at least one number and one uppercase and lowercase letter, and at
+                <p>Please note the password must contain at least one number, one uppercase letter, lowercase letters, and at
                     least 8 or more characters</p>
             </div>
             <button class="ui blue submit button">Submit</button>
