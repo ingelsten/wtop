@@ -6,9 +6,12 @@ import play.Logger;
 import play.mvc.Controller;
 import utils.StationAnalytics;
 
+// Station Controller passing parameters thru to display in view
 
 public class StationCtrl extends Controller {
 
+
+  // Declaring variables
   public static void index(Long id) {
     Station station = Station.findById(id);
     Logger.info("Station id = " + id);
@@ -23,6 +26,10 @@ public class StationCtrl extends Controller {
     double minPressure;
     double maxPressure;
     Reading latestRead = StationAnalytics.getLatestReading(station.readings);
+
+    // Try catch statement to avoid NullPointerExeption
+    // Latest reads
+    // Conversions and max min values
 
     try {
       weatherCode = StationAnalytics.codeToText(latestRead.code);
@@ -82,8 +89,12 @@ public class StationCtrl extends Controller {
       maxPressure = 0;
     }
 
+
+    // Loggers used during testing to ensure data is passed thru.
     //  Logger.info("Test " + minTemperature);
     //      Logger.info("Latest read in Celcius= " + latestRead.temperature + "Latest pressure= " + latestRead.pressure);
+
+    // Below renders data to view.
     render("station.html", station, latestRead, weatherCode, beauCode, compassDirection, windChillTemp, minTemperature,
         maxTemperature, minWindSpeed, maxWindSpeed, minPressure, maxPressure);
   }

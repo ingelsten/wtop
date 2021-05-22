@@ -7,9 +7,10 @@ import play.mvc.Controller;
 
 import java.util.List;
 
+// Dashboard controller passing thru station data and functionality.
 public class Dashboard extends Controller {
   public static void index() {
-    Logger.info("Rendering Admin");
+    Logger.info("Rendering Aldmin");
     Member member = Accounts.getLoggedInMember();
     List<Station> stations = member.stations;
     render("dashboard.html", stations);
